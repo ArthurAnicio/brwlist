@@ -1,0 +1,33 @@
+#header-content {
+    display: flex;
+    background-color: var(--azul);
+    width: 100%;
+    position: relative;
+    padding: 20px 0;
+    align-items: center;
+}
+
+#header-content h1{
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--branco);
+    margin-left: 31.5vw;
+}
+
+#header-content img{
+    object-fit: contain;
+    width: 200px;
+}
+
+#home-icon{
+    height: 5vh;
+    fill: var(--branco);
+    margin-left: 35vw;
+    transition: 0.2s;
+}
+
+#home-icon:hover{
+    fill: var(--cinza);
+    scale: 1.05;
+}
+
