@@ -1,0 +1,23 @@
+:root{
+    --verde: #0EFF51;
+    --azul: #1D83E1;
+    --azul2: #7eedf5;
+    --vermelho: #F42C20;
+    --amarelo: #FEDF3F;
+    --branco: #EDF2F5;
+    --cinza: #C6CBCE;
+    --preto: #16141a;
+    --rosa: #cb00e6;
+
+    font-family: Poppins;
+    font-size: 60%;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    min-height: 100vh;
+}
