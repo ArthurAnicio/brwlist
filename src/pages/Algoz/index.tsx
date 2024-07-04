@@ -1,17 +1,21 @@
-import Footer from "../../components/Footer"
-import Header from "../../components/Header"
-import Paths from "../../components/Paths"
+import React, { useState, useEffect } from 'react';
+import BrawlerList from '../../Brawlist';
+import { Brawler } from '../../Types';
+import brawlersData from '../../public/brawlers.json';
 
-function Algoz(){
-    return(
-        <div>
-            <Header />
-            <div id="container">
-                <Paths/>
-            </div>
-            <Footer />
-        </div>
-    )
-}
+const Home: React.FC = () => {
+    const [brawlers, setBrawlers] = useState<Brawler[]>([]);
 
-export default Algoz
+    useEffect(() => {
+        setBrawlers(brawlersData.brawlers);
+    }, []);
+
+    return <BrawlerList brawlers={brawlers} />;
+};
+
+export default Home;
+
+
+
+
+

@@ -1,19 +1,28 @@
-import Header from "../../components/Header"
+import React, { useState, useEffect } from 'react';
+import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Paths from "../../components/Paths";
-import List from "../../components/List";
+import BrawlerList from '../../Brawlist';
+import { Brawler } from '../../Types';
+import brawlersData from '../../public/brawlers.json';
 
-function Home(){
-    return(
+const Home: React.FC = () => {
+    const [brawlers, setBrawlers] = useState<Brawler[]>([]);
+
+    useEffect(() => {
+        setBrawlers(brawlersData.brawlers);
+    }, []);
+
+    return (
         <div>
             <Header />
             <div id="container">
-                <Paths/>
-                <List label="/" categoria="/"></List>
+                <Paths />
+                <BrawlerList brawlers={brawlers} /> 
             </div>
             <Footer />
         </div>
-    )
-}
+    );
+};
 
-export default Home
+export default Home;
