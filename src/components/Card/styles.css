@@ -1,0 +1,16 @@
+.brawler-card{
+    width: 23vw;
+    border-radius: 20px;
+    padding: 2rem;
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: row;
+    font-size: 3rem;
+    color: var(--preto);
+}
+
+.brawler-card img{
+    width: 10vw;
+    height: 20vh;
+    margin-right: 2vw;
+}

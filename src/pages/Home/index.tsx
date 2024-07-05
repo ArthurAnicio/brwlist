@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import './styles.css'
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Paths from "../../components/Paths";
-import BrawlerList from '../../Brawlist';
-import { Brawler } from '../../Types';
-import brawlersData from '../../public/brawlers.json';
+import Card, {Brawler} from '../../components/Card';
+import brawlersData from '../../../public/brawlers.json';
 
 const Home: React.FC = () => {
     const [brawlers, setBrawlers] = useState<Brawler[]>([]);
@@ -18,7 +18,13 @@ const Home: React.FC = () => {
             <Header />
             <div id="container">
                 <Paths />
-                <BrawlerList brawlers={brawlers} /> 
+                <div className="list">
+                    {
+                        brawlers.map((brawler)=>(
+                            <Card brawler={brawler}/>
+                        ))
+                    }
+                </div>
             </div>
             <Footer />
         </div>
