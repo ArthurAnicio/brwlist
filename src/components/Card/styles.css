@@ -7,10 +7,30 @@
     flex-direction: row;
     font-size: 3rem;
     color: var(--preto);
+    margin: 2vh 0;
+
 }
 
 .brawler-card img{
     width: 10vw;
     height: 20vh;
     margin-right: 2vw;
+}
+#brawler-card-Inicial {
+    background-color: var(--azul3);
+}
+#brawler-card-Raro {
+    background-color: var(--verde);
+}
+#brawler-card-Super-raro {
+    background-color: var(--azul);
+}
+#brawler-card-Epico {
+    background-color: var(--roxo);
+}
+#brawler-card-Mitico {
+    background-color: var(--vermelho);
+}
+#brawler-card-Lendario {
+    background-color: var(--amarelo);
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState} from 'react';
 import './styles.css'
 
 export interface Brawler{
@@ -13,27 +13,11 @@ interface BrawlerProps{
 }
 
 const Card: React.FC<BrawlerProps> = ({ brawler }) => {
-    const raridade = brawler.raridade
-    const card = document.getElementById("brawler-card")!
-    useEffect(()=>{
-        function setup(){
-            if(raridade == "Inicial"){
-
-            }else if(raridade == "Inicial"){
-
-            }else if(raridade == "Inicial"){
-
-            }else if(raridade == "Inicial"){
-
-            }else if(raridade == "Inicial"){
-
-            }
-        }
-        setup()
-    })
-
+    var raridade=" "
+    raridade = brawler.raridade
+    
     return (
-        <div className="brawler-card">
+        <div className="brawler-card" id={`brawler-card-${raridade}`}>
             <img src={brawler.imagem} alt={brawler.nome} />
             <section id='info'>
                 <h3>{brawler.nome}</h3>
