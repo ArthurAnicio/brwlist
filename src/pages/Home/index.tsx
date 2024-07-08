@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './styles.css'
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -6,7 +6,7 @@ import Paths from "../../components/Paths";
 import Card, {Brawler} from '../../components/Card';
 import brawlersData from '../../../public/brawlers.json';
 
-const Home: React.FC = () => {
+function Home(){
     const [brawlers, setBrawlers] = useState<Brawler[]>([]);
 
     useEffect(() => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React from 'react';
 import './styles.css'
 
 export interface Brawler{
@@ -17,13 +17,17 @@ const Card: React.FC<BrawlerProps> = ({ brawler }) => {
     raridade = brawler.raridade
     
     return (
-        <div className="brawler-card" id={`brawler-card-${raridade}`}>
-            <img src={brawler.imagem} alt={brawler.nome} />
-            <section id='info'>
-                <h3>{brawler.nome}</h3>
-                <p>{brawler.raridade}</p>
-                <p>{brawler.classe}</p>
-            </section>
+        <div className="brawler-card">
+            <div className="linha" id={raridade}></div>
+            <nav>
+                <img src={brawler.imagem} alt={brawler.nome} />
+                <section id='info'>
+                    <h3>{brawler.nome}</h3>
+                    <p id={`raridade-${raridade}`}>{brawler.raridade}</p>
+                    <p>{brawler.classe}</p>
+                </section>
+            </nav>   
+                
                 
         </div>
     )
