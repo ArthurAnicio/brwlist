@@ -559,6 +559,20 @@
             "raridade":"Lendario",
             "classe":"Tanque",
             "imagem":"https://www.brawlstarsdicas.com.br/wp-content/uploads/2017/06/draco-wiki-brawl-stars-dicas-150x150.png"
+        },
+        {
+            "id":81,
+            "nome":"Zoe",
+            "raridade":"Epico",
+            "classe":"Suporte",
+            "imagem":"https://www.brawlstarsdicas.com.br/wp-content/uploads/2017/06/berry-wiki-brawl-stars-dicas-150x150.png"
+        },
+        {
+            "id":82,
+            "nome":"Coby",
+            "raridade":"Mitico",
+            "classe":"Destruidor",
+            "imagem":"https://www.brawlstarsdicas.com.br/wp-content/uploads/2017/06/coby-wiki-brawl-stars-dicas-150x150.png"
         }
     ]
 }
