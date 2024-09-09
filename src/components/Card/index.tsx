@@ -6,6 +6,9 @@ export interface Brawler{
     imagem: string;
     raridade: string;
     classe: string;
+    trio: string;
+    lancamento: number;
+    hipercarga: boolean;
 }
 
 interface BrawlerProps{

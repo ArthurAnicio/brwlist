@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Suporte from "./pages/Suporte";
 import Tanque from "./pages/Tanque";
 import Tiro_Preciso from "./pages/Tiro-Preciso";
+import Brawldle from "./pages/Brawldle";
 
 function WebRoutes() {
     return (
@@ -21,6 +22,7 @@ function WebRoutes() {
                 <Route path="/suporte" Component={Suporte} />
                 <Route path="/tanque" Component={Tanque} />
                 <Route path="/tiro-preciso" Component={Tiro_Preciso} />
+                <Route path="/brawldle" Component={Brawldle} />
             </Routes>
         </BrowserRouter>
     );
