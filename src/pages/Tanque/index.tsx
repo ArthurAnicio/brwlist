@@ -3,7 +3,8 @@ import './styles.css'
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Paths from "../../components/Paths";
-import Card, {Brawler} from '../../components/Card';
+import Card from '../../components/Card';
+import { Brawler } from '../../models/Brawler';
 import brawlersData from '../../../public/brawlers.json';
 
 function Tanque(){
