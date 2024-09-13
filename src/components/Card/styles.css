@@ -40,3 +40,24 @@
     background-color: var(--azul);
 }
 
+
+.brawler-card:hover:has(>#Inicial){
+    box-shadow: 0 0 10px var(--azul3);
+}
+.brawler-card:hover:has(>#Super-raro){
+    box-shadow: 0 0 10px var(--azul);
+}
+.brawler-card:hover:has(>#Raro){
+    box-shadow: 0 0 10px var(--verde);
+}
+.brawler-card:hover:has(>#Epico){
+    box-shadow: 0 0 10px var(--roxo);
+}
+.brawler-card:hover:has(>#Mitico){
+    box-shadow: 0 0 10px var(--vermelho);
+}
+.brawler-card:hover:has(>#Lendario){
+    box-shadow: 0 0 10px var(--amarelo);
+}
+
+
