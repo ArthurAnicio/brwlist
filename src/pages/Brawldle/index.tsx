@@ -8,7 +8,6 @@ import { Brawler } from '../../models/Brawler';
 function Brawldle() {
     const [brawlers, setBrawlers] = useState<Brawler[]>([]);
     const [brawlerCerto, setBrawlerCerto] = useState<Brawler | null>(null);
-    const [brawlerTentado, setBrawlerTentado] = useState<Brawler | null>(null);
     const [tentativa, setTentativa] = useState('');
     const [tentativas, setTentativas] = useState<Brawler[]>([]);
 
@@ -25,12 +24,9 @@ function Brawldle() {
         const brawlerEncontrado = brawlers.find((brawler: Brawler) => brawler.nome.toLowerCase() === tentativa.toLowerCase());
     
         if (brawlerEncontrado) {
-            setBrawlerTentado(brawlerEncontrado);
             setTentativas((prevTentativas) => [brawlerEncontrado, ...prevTentativas]);
     
             setTentativa('');
-        } else {
-            setBrawlerTentado(null); 
         }
     }
 
