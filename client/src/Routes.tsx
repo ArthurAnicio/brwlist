@@ -9,12 +9,14 @@ import Suporte from "./pages/Suporte";
 import Tanque from "./pages/Tanque";
 import Tiro_Preciso from "./pages/Tiro-Preciso";
 import Brawldle from "./pages/Brawldle";
+import Login from "./pages/"
 
 function WebRoutes() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/home" Component={Home} />
+            <Route path="/home" Component={Login} />
+            <Route path="/home" Component={Home} />
                 <Route path="/algoz" Component={Algoz} />
                 <Route path="/controle" Component={Controle} />
                 <Route path="/destruidor" Component={Destruidor} />
