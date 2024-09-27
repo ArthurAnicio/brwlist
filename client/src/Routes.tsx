@@ -14,7 +14,7 @@ function WebRoutes() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" Component={Home} />
+                <Route path="/home" Component={Home} />
                 <Route path="/algoz" Component={Algoz} />
                 <Route path="/controle" Component={Controle} />
                 <Route path="/destruidor" Component={Destruidor} />
