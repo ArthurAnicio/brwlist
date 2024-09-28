@@ -1,21 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
-
-interface AxiosError {
-  response?: {
-    data: {
-      message: string;
-    };
-  };
-}
+import Footer from "../../components/Footer";
+import '../Login/index.css';
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
@@ -24,15 +18,13 @@ function Login() {
       localStorage.setItem("token", token);
       navigate("/home");
     } catch (error) {
-      // Usando type assertion para tratar o erro
-      const axiosError = error as AxiosError; // Definindo o tipo
-      console.error('Erro no login:', axiosError.response?.data.message || (error as Error).message);
-      alert(axiosError.response?.data.message || 'Erro ao fazer login.');
+      console.error('Erro no login:', error.response?.data?.message || error.message);
+      alert(error.response?.data?.message || 'Erro ao fazer login.');
     }
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -51,6 +43,10 @@ function Login() {
         />
         <button type="submit">Entrar</button>
       </form>
+      <button onClick={() => navigate("/register")} style={{ marginTop: '10px' }}>
+        Não tem uma conta? Cadastre-se
+      </button>
+      <Footer />
     </div>
   );
 }
