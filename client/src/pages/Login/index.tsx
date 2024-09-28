@@ -1,25 +1,33 @@
-// client/src/pages/Login.tsx
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
+interface AxiosError {
+  response?: {
+    data: {
+      message: string;
+    };
+  };
+}
+
 function Login() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/login', { email, password });
+      const response = await axios.post('http://localhost:5000/login', { username, password });
       const { token } = response.data;
-      localStorage.setItem("token", token); // Armazena o token no localStorage
-      navigate("/home"); // Redireciona para a página home
+      localStorage.setItem("token", token);
+      navigate("/home");
     } catch (error) {
-      console.error('Erro no login:', error.response?.data?.message || error.message);
-      alert(error.response?.data?.message || 'Erro ao fazer login.');
+      // Usando type assertion para tratar o erro
+      const axiosError = error as AxiosError; // Definindo o tipo
+      console.error('Erro no login:', axiosError.response?.data.message || (error as Error).message);
+      alert(axiosError.response?.data.message || 'Erro ao fazer login.');
     }
   };
 
@@ -28,10 +36,10 @@ function Login() {
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Usuário"
           required
         />
         <input

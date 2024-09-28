@@ -2,22 +2,30 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
+interface AxiosError {
+  response?: {
+    data: {
+      message: string;
+    };
+  };
+}
+
 function Register() {
   const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/register', { username, email, password });
+      const response = await axios.post('http://localhost:5000/register', { username, password });
       alert(response.data.message);
-      navigate('/login'); 
+      navigate('/login');
     } catch (error) {
-      console.error('Erro no registro:', error.response?.data?.message || error.message);
-      alert(error.response?.data?.message || 'Erro ao registrar.');
+      const axiosError = error as AxiosError; 
+      console.error('Erro no registro:', axiosError.response?.data.message || (error as Error).message);
+      alert(axiosError.response?.data.message || 'Erro ao registrar.');
     }
   };
 
@@ -30,13 +38,6 @@ function Register() {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Usuário"
-          required
-        />
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
           required
         />
         <input
